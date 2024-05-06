@@ -2,19 +2,20 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'Login' => 'Login',
+    'Sign out' => 'Sign out',
+    'Email' => 'Email',
+    'Password' => 'Password',
+    'Send' => 'Send',
+    'Sign in' => 'Sign in',
+    'Sign up' => 'Sign up',
+    'Remember me' => 'Remember me',
+    'Forgot password?' => 'Forgot password?',
+    'First Name' => 'First Name',
+    'Last Name' => 'Last Name',
+    'Confirm Password' => 'Confirm Password',
+    'Register' => 'Register',
+    'I accept the terms.' => 'I accept the terms.',
+    'Email or password is incorrect' => 'Email or password is incorrect',
 
 ];
