@@ -33,7 +33,15 @@
                                     <input wire:model.lazy="password" id="password" type="password" class="form-control form-control-sm mb-2 " placeholder="{{__('main.password')}}">
                                     @error('password') <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
-
+                                <div>
+                                    <label for="role">Seleccionar Rol:</label>
+                                    <select wire:model="selectedRole" class="form-select" id="role">
+                                        <option value="">Seleccionar Rol</option>
+                                        @foreach($roles as $role)
+                                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -5,7 +5,9 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-
+use Spatie\Permission\Models\Role;
+use Database\Seeders\UserSeeder;
+use Database\Seeders\RoleSeeder;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -15,12 +17,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'first_name' => 'Murat',
-            'last_name' => 'Hasdemir',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make(12345678),
-            'role' => 'admin',
+        $this->call([
+            RoleSeeder::class,
+            UserSeeder::class
         ]);
+
     }
 }

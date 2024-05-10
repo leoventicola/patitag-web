@@ -29,7 +29,6 @@ class Register extends Component
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
             'email' => $this->email,
-            'role' => $this->role,
             'password' => Hash::make($this->password),
         ]);
 
@@ -37,7 +36,6 @@ class Register extends Component
             'email' => $this->email,
             'password' =>$this->password,
         ];
-
         if(Auth::attempt($credentials)){
             return redirect()->route('admin.dashboard');
         }

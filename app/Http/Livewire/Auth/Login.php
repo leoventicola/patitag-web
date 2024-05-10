@@ -21,7 +21,7 @@ class Login extends Component
             'password' => $this->password,
         ];
         if(Auth::attempt($credentials)){
-            if(Auth::user()->role=='admin'){
+            if(Auth::user()->hasRole('Admin')){
                 return redirect()->route('admin.dashboard');
             }
         }

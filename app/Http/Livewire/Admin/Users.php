@@ -5,12 +5,18 @@ namespace App\Http\Livewire\Admin;
 use Livewire\Component;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Livewire\WithPagination;
+use Spatie\Permission\Models\Role;
 class Users extends Component
 {
+    use WithPagination;
+
+    public $search = '';
     public $first_name, $email, $last_name, $password;
     public $modal = false;
     public $users;
-    public $role = 'user';
+    public $roles;
+    public $selectedRole;
 
     protected $rules = [
         'first_name' => 'required',
@@ -22,6 +28,7 @@ class Users extends Component
     public function render()
     {
         $this->users = User::all();
+        $this->roles = Role::all();
         return view('livewire.admin.users.index')->layout('layouts.admin.app');
     }
 
@@ -30,7 +37,6 @@ class Users extends Component
         $this->last_name = '';
         $this->email = '';
         $this->password = '';
-        $this->role = '';
     }
 
     public function openModal($bool){
@@ -50,7 +56,6 @@ class Users extends Component
                         'first_name' => $this->first_name,
                         'last_name' => $this->last_name,
                         'email' => $this->email,
-                        'role' => $this->role,
                         'password' => Hash::make($this->password),
                         ];
 
@@ -61,7 +66,7 @@ class Users extends Component
         }else{
             $user = User::create($user_data);
         }
-
+        $user->assignRole($this->selectedRole);
         $this->openModal(false);
     }
 
@@ -72,7 +77,11 @@ class Users extends Component
         $this->last_name = $user->last_name;
         $this->email = $user->email;
         $this->password = '';
-        $this->role = 'user';
+    }
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
     }
 
 }
