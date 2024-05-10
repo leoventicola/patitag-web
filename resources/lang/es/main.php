@@ -1,0 +1,53 @@
+<?php
+
+return [
+
+    'Title' => 'Title',
+    'Content' => 'Content',
+    'Slug' => 'Slug',
+    'Image' => 'Image',
+    'Seo Title' => 'Seo Title',
+    'Seo Description' => 'Seo Description',
+    'Index' => 'Index',
+    'Follow' => 'Follow',
+    'Date' => 'Date',
+    'Featured Image' => 'Featured Image',
+    'Creation Date' => 'Creation Date',
+    'Date of Update' => 'Date of Update',
+    'Status' => 'Status',
+    'Order' => 'Order',
+    'Parent' => 'Parent',
+    'Green Range Is Ideal' => 'Green Range Is Ideal',
+    'Url' => 'Url',
+    'Alt' => 'Alt Tag',
+
+    'Add' => 'Add',
+    'Upload' => 'Upload',
+    'Remove' => 'Remove',
+    'Choose' => 'Choose',
+    'Delete' => 'Delete',
+    'Select' => 'Select',
+    'Add New' => 'Add New',
+    'Create' => 'Create',
+    'Edit' => 'Edit',
+    'Update' => 'Update',
+    'Submit' => 'Submit',
+    'Save' => 'Save',
+
+    'Dashboard' => 'Dashboard',
+    'Post' => 'Post',
+    'Posts' => 'Posts',
+    'Language' => 'Idioma',
+    'Languages' => 'Idiomas',
+    'Category' => 'Categoria',
+    'Categories' => 'Categorias',
+    'User' => 'Usuario',
+    'Users' => 'Usuarios',
+    'Media' => 'Foto',
+    'Medias' => 'Fotos',
+    'first_name' => 'Nombre',
+    'last_name'  => 'Apellido',
+    'email'     => 'e-mail',
+    'password'  => 'Contraseña'
+
+];

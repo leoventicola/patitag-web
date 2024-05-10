@@ -7,6 +7,12 @@
           </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link @if(Request::segment(2)=='users')active" aria-current="page @endif" href="{{route('admin.users')}}">
+                <i class="fa fa-user"></i>
+              {{__('main.Users')}}
+            </a>
+          </li>
+        <li class="nav-item">
           <a class="nav-link @if(Request::segment(2)=='post')active" aria-current="page @endif" href="{{route('admin.post')}}">
             <i class="fas fa-copy"></i>
             {{__('main.Posts')}}
