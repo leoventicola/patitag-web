@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class Login extends Component
 {
-    public $email = 'admin@gmail.com', $password = '12345678' ,$remember_me;
+    public $email = '', $password = '' ,$remember_me;
 
     protected $rules = [
         'email' => 'required|email',

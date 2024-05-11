@@ -22,7 +22,6 @@ class Users extends Component
         'first_name' => 'required',
         'last_name' => 'required',
         'email' => 'required|email',
-        'password' => 'required|min:8',
     ];
 
     public function render()
@@ -56,10 +55,13 @@ class Users extends Component
                         'first_name' => $this->first_name,
                         'last_name' => $this->last_name,
                         'email' => $this->email,
-                        'password' => Hash::make($this->password),
                         ];
 
         $user = User::where('email','=',$this->email)->first();
+
+        if(!$user || ($user && $this->password != '')){
+            $user_data['password'] = Hash::make($this->password);
+        }
 
         if($user){
             $user->update($user_data);
